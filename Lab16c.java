@@ -8,9 +8,9 @@ public class Lab16c
 	{
 		Words test = new Words("one two three four five six seven alligator");
 		System.out.println(test);
-		//System.out.println("word with 2 vowels = "+test.countWordsWithXVowels(2));
-		//System.out.println("word with 3 vowels = "+test.countWordsWithXVowels(3));
-		//System.out.println("word with 4 vowels = "+test.countWordsWithXVowels(4));
+		System.out.println("word with 2 vowels = "+test.countWordsWithXVowels(2));
+		System.out.println("word with 3 vowels = "+test.countWordsWithXVowels(3));
+		System.out.println("word with 4 vowels = "+test.countWordsWithXVowels(4));
 		System.out.println("word with 2 chars = "+test.countWordsWithXChars(2));
 		System.out.println("word with 3 chars = "+test.countWordsWithXChars(3));
 		System.out.println("word with 4 chars = "+test.countWordsWithXChars(4));
@@ -21,8 +21,20 @@ public class Lab16c
 		System.out.println("\nnumber of vowels in the words removed == " + vowelsRemoved);
 		System.out.println("\n\n");
 
-
 		//more test cases
+		Words testTwo = new Words("we all live in a yellow submarine");
+		System.out.println(testTwo);
+		System.out.println("word with 2 vowels = "+testTwo.countWordsWithXVowels(2));
+		System.out.println("word with 3 vowels = "+testTwo.countWordsWithXVowels(3));
+		System.out.println("word with 4 vowels = "+testTwo.countWordsWithXVowels(4));
+		System.out.println("word with 2 chars = "+testTwo.countWordsWithXChars(2));
+		System.out.println("word with 3 chars = "+testTwo.countWordsWithXChars(3));
+		System.out.println("word with 4 chars = "+testTwo.countWordsWithXChars(4));
+		System.out.println("word with 5 chars = "+testTwo.countWordsWithXChars(5));
 
+		int secondVowelsRemoved = testTwo.removeWordsWithXChars(2);
+		System.out.println("\nafter removing words with 3 chars \n" + testTwo);
+		System.out.println("\nnumber of vowels in the words removed == " + secondVowelsRemoved);
+		System.out.println("\n\n");
 	}
 }

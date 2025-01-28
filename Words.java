@@ -53,13 +53,13 @@ public class Words
 	{
 		int vowelCount = 0;
 
-		for(Word i: wordList)
+		for(int i = wordList.size() - 1; i >= 0; i--)
 		{
 
-			if(i.getLength() == size)
+			if(wordList.get(i).getLength() == size)
 			{
+				vowelCount += wordList.get(i).getNumVowels();
 				wordList.remove(i);
-				vowelCount += i.getNumVowels();
 			}
 		}
 
