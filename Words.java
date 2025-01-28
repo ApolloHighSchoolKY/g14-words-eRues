@@ -8,33 +8,41 @@ public class Words
 
 	public Words()
 	{
-
+		wordList = new ArrayList<Word>();
 	}
 
 	public Words(String s)
 	{
+		wordList = new ArrayList<Word>();
 
+		setWords(s);
 	}
 
 	public void setWords(String s)
 	{
+		wordList.clear();
+
 		//Create a Scanner for the list of words in the string "s"
+		Scanner breaker = new Scanner(s);
 
-
-		//Continue to loop while there are more words to read
-
-			//Add objects of the type Word to our ArrayList "wordList"
-
-
+		//While loop that breaks up the string into multiple words
+		while(breaker.hasNext())
+		{
+			wordList.add(new Word(breaker.next()));
+		}
 	}
 
 	public int countWordsWithXChars(int size)
 	{
-		int count=0;
+		int count = 0;
 
-		//for every Word in the ArrayList "wordList"
-
-			//if the length of the "theWord" is the same as the parameter "size"
+		for(Word i: wordList)
+		{
+			if(i.getLength() == size)
+			{
+				count++;
+			}
+		}
 
 		return count;
 	}
@@ -45,21 +53,32 @@ public class Words
 	{
 		int vowelCount = 0;
 
-		//for each Word in the ArrayList "words" loop
+		for(Word i: wordList)
+		{
 
-			//if the Word has "size" characters
-
+			if(i.getLength() == size)
+			{
+				wordList.remove(i);
+				vowelCount += i.getNumVowels();
+			}
+		}
 
 		return vowelCount;
 	}
 
 	public int countWordsWithXVowels(int numVowels)
 	{
-		int count=0;
+		int count = 0;
+		int vowels = 0;
 
-		//for every Word in the ArrayList "words"
-
-			//if the number of vowels in "theWord" is the same as the parameter "numVowels"
+		for(Word i: wordList)
+		{
+			vowels = i.getNumVowels();
+			if(vowels == numVowels)
+			{
+				count++;
+			}
+		}
 
 
 		return count;
@@ -67,6 +86,6 @@ public class Words
 
 	public String toString()
 	{
-	   return "";
+	   return "" + wordList;
 	}
 }
